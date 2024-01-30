@@ -1,0 +1,345 @@
+@font-face {
+    font-family: freight;
+    src: url(./Freight\ Big\ Pro\ Light.woff2);
+}
+@font-face {
+    font-family: grotesk;
+    src: url(./NeueHaasDisplayLight.woff2);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: freight;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    background-color: #F5E41B;
+}
+#loader{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    /* display: none; */
+}
+#yellowdiv{
+    height: 100%;
+    width: 100%;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 10;
+}
+#yellowdiv2{
+    height: 100%;
+    width: 100%;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 7;
+}
+#loader h1{
+    font-size: 7vw;
+    font-weight: 200;
+    line-height: 5vw;
+    letter-spacing: -3.5px;
+    position: relative;
+    z-index: 9;
+    text-align: center;
+}
+
+#loader video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    z-index: 6;
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 4vw;
+    z-index: 99;
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+#page1 h1{
+    font-size: 7vw;
+    font-weight: 200;
+    line-height: 5vw;
+    letter-spacing: -3.5px;
+}
+#page1-bottom .bottom{
+    padding: 2vw 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h3{
+    font-family: grotesk;
+    font-size: 1.1vw;
+    cursor: pointer;
+    position: relative;
+    transition:all 0.4s ease-in-out;
+    transition-delay: 0.2s;
+    
+}
+h3:hover::before{
+    width: 100%;
+}
+h3::before{
+    content: "";
+    height: 3%;
+    width: 0%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.1s ease-in-out;
+}
+.close{
+    transition: all 0.3s ease-in-out;
+    scale:1.6;
+}
+.more{
+    scale:1.6;
+}
+/* .close:hover{
+    transform: rotate(45deg);
+} */
+span{
+    cursor: pointer;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.elem{
+    /* background-color: red; */
+    position: relative;
+    width: 100%;
+}
+.blur{
+    width: 20%;
+    height: 100%;
+    /* background-color: rgb(124, 66, 66); */
+    background:linear-gradient(to right,#f5e31b,#F5E41B,#f5e31b);
+    box-shadow: 10px 0 20px 20px #F5E41B;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    top: 50%;
+    right: 55%;
+    transform: translate(-50%,-50%);
+    z-index: 6;
+}
+.blurr{
+    width: 30%;
+    left: 25%;
+}
+.elem h2{
+    font-size: 8vw;
+    font-weight: 200;
+    position: relative;
+    z-index: 10;
+    line-height: 5.5vw;
+}
+.elem h2:hover{
+    font-style: italic;
+    cursor: pointer;
+    color: black;
+}
+.elem:hover .marquee{
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+.marquee{
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    background-color: yellow;
+    padding: 0.5vw 0;
+    position: absolute;
+    top: 40%;
+    transform: translate(0,-50%);
+    z-index: -1;
+    opacity: 0;
+    transform: rotateX(90deg);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+}
+.marquee-text{
+    display: flex;
+    gap: 2vw;
+    animation: marquee 7s linear infinite;
+
+}
+.marquee-text h5{
+    display: inline-block;
+    font-size: 1vw;
+    color: black;
+    font-family: grotesk;
+}
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+#page3{
+    min-height: 100vh !important;
+    width: 100%;
+    background-color:white;
+    padding: 4vw;
+    display: flex;
+    gap: 2vw;
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2vw;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 9;
+}
+.overlay .heading{
+    color: white;
+    font-size:3vw;
+    text-align: center;
+    font-weight: 200;
+    line-height: 2.5vw;
+}
+
+#line1{
+height: fit-content;
+    width: 35%;
+/* background-color: red; */
+display: flex;
+flex-direction: column;
+gap: 2vw;
+
+}
+#line2{
+width: 35%;
+/* background-color: rgb(79, 32, 32); */
+display: flex;
+flex-direction: column;
+gap: 2vw;
+}
+#line3{
+width: 35%;
+/* background-color: rgb(19, 16, 16); */
+display: flex;
+flex-direction: column;
+gap: 2vw;
+}
+.img{
+    width: 100%;
+    overflow: hidden;
+    /* background-color: yellow; */
+    position: relative;
+    overflow: hidden;
+}
+.img .image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.2s ease-in-out;
+}
+.img:hover .overlay{
+    opacity:1;
+    cursor: pointer;
+}
+.img:hover .image{
+    scale:1.1;
+}
+#footer{
+    height: 40vh;
+    width:100%;
+}
+#footer-top{
+    height: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#footer-top .btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#footer-top .btn:hover{
+    cursor: pointer;
+}
+#footer-top h4{
+    font-family: grotesk;
+    font-size: 1.2vw;
+}
+#footer span{
+    font-size: 1.5vw;
+}
+#footer-bottom{
+    height: 50%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+}
+#footer-bottom h3::before{
+    background-color: white;
+}
+#footer-bottom #right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
